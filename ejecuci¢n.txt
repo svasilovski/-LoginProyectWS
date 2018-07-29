@@ -1,0 +1,99 @@
+Las carpetas ayuda, db y logs deben estar creadas.
+
+python: Aplicacion portable versi贸n 3.6
+webServer
+	ayuda
+		wsAccionesUsuarioDoc.html : Documentaci贸n creada automaticamente.
+	db
+		dbLogin.sqlite : Base de datos si no existe las crea al iniciar el servicio.
+	logs : Archivos de log se crean automaticamente.
+		appConnectionDBClass.log
+		appDocumentoWS.log
+		appUsuarioClass.log
+		appSqliteClasss.log
+		appWSServices.log
+	pyAuxiliares : Clases ausiliares concretas
+		ConnectionDBClass.py : Realiza la conexi贸n a la base de datos SQLITE.
+		SqliteClass.py : Clase generica para realizar acciones en la base de datos.
+		UsuariosClass.py : Clase exclusia para manejar la tabla se usuarios.
+	wsAccionesDeUsuario.py : Archivo que ejecuta el servicio a consutar.
+	wsAccionesDeUsuarioCliente.py : Servicio para testear el funcionamiento.
+	wsAccionesDeUsuarioDocumento.py : Servicio que genera la documentaci贸n del servicio.
+
+Desde Windows
+	Primero ejecutar el servicio:
+		1) Crear la carpeta logs si no existe.
+
+		2) Abrimos la consola win+r y escribimos CMD
+
+		3) Nos posicionamos en la carpeta webServer.
+			cd [path donde guardo]\webServer
+
+		4) Ejecutamos el servicio
+			..\python\python.exe wsAccionesDeUsuario.py
+
+	Los siguiente se puede jecutar uno u otro segun precise.
+	Para ejecutar el cliente:
+		1) Crear la carpeta logs si no existe.
+
+		2) Abrimos otra consola win+r y escribimos CMD
+		
+		3) Nos posicionamos en la carpeta webServer.
+			cd [path donde guardo]\webServer
+
+		4) Ejecutamos el servicio
+			..\python\python.exe wsAccionesDeUsuarioCliente.py
+
+	Para Crear la documentaci贸n:
+		1) Debera tener creada la carpeta ayuda.
+
+		2) Abrimos otra consola win+r y escribimos CMD
+		
+		3) Nos posicionamos en la carpeta webServer.
+			cd [path donde guardo]\webServer
+
+		4) Ejecutamos el servicio
+			..\python\python.exe wsAccionesDeUsuarioCliente.py
+
+Desde Linux
+	Instalar python3.6
+
+	Primero ejecutar el servicio:
+		1) Crear la carpeta logs si no existe.
+
+		2) Abrimos la terminal.
+
+		3) Nos posicionamos en la carpeta webServer.
+			cd [path donde guardo]\webServer
+
+		4) Ejecutamos el servicio
+			python wsAccionesDeUsuario.py
+
+	Los siguiente se puede jecutar uno u otro segun precise.
+	Para ejecutar el cliente:
+		1) Crear la carpeta logs si no existe.
+
+		2) Abrimos otra terminal.
+		
+		3) Nos posicionamos en la carpeta webServer.
+			cd [path donde guardo]\webServer
+
+		4) Ejecutamos el servicio
+			python wsAccionesDeUsuarioCliente.py
+
+	Para Crear la documentaci贸n:
+		1) Debera tener creada la carpeta ayuda.
+
+		2) Abrimos otra terminal.
+		
+		3) Nos posicionamos en la carpeta webServer.
+			cd [path donde guardo]\webServer
+
+		4) Ejecutamos el servicio
+			python wsAccionesDeUsuarioCliente.py
+
+En caso de tener problemas para ejecutar buscar en la carpeta webService la carpeta __pycache__ y eliminarlas. 
+
+Ejacuci髇 con flask
+export FLASK_APP=wsAccionesDeUsuarioFlask.py
+python -m flask run --host=0.0.0.0  --port=8000
